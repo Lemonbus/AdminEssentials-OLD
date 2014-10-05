@@ -1,0 +1,12 @@
+# Thanks for using my plugin! #
+# The prefix will always be before the message, so you don't need to put the prefix before every message! #
+# ChatColors are supported, for more information, go to http://ess.khhq.net/mc/ for all of the colors #
+# Finally, if the {PLAYER} is the console, the name will be "CONSOLE" #
+# Once again, thanks! #
+# Googlelover1234 - Author #
+Settings:
+  prefix: '&6[&bAdminEssentials&6] '
+  clearchat-message: '&aChat has been cleared by {PLAYER}!'
+  mutechat-message: '&cChat has been muted by {PLAYER}!'
+  unmutechat=message: '&aChat has been unmuted by {PLAYER}!'
+  chat-is-muted: '&cChat is currently muted!'
