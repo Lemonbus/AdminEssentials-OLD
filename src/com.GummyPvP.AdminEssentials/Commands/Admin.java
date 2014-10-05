@@ -1,6 +1,8 @@
 package com.GummyPvP.AdminEssentials.Commands;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.GameMode;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -29,15 +31,18 @@ public class Admin implements CommandExecutor {
 			if (args.length != 0) {
 				return false;
 			}
-			if (plugin.admin.contains(p)) {
-				plugin.admin.remove(p);
-				// send config msg
+			if (!plugin.admin.contains(p)) {
+				plugin.admin.add(p);
+				p.sendMessage(ChatColor.LIGHT_PURPLE
+						+ "You are now in ADMIN mode");
+				p.setGameMode(GameMode.CREATIVE);
 				for (Player online : Bukkit.getOnlinePlayers()) {
 					online.showPlayer(p);
 				}
 			} else {
-				plugin.admin.add(p);
-				// send config msg
+				plugin.admin.remove(p);
+				p.sendMessage(ChatColor.GREEN + "You are now in PLAY mode");
+				p.setGameMode(GameMode.SURVIVAL);
 				for (Player online : Bukkit.getOnlinePlayers()) {
 					online.hidePlayer(p);
 				}
