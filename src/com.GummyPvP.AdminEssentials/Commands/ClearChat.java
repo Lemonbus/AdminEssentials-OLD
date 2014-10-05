@@ -33,7 +33,7 @@ public class ClearChat implements CommandExecutor {
 					plugin.getConfig().getString("Settings.prefix")
 							+ plugin.getConfig()
 									.getString("Settings.clearchat-message")
-									.replaceAll("{PLAYER}", sender.getName())));
+									.replaceAll("%PLAYER%", sender.getName())));
 			return true;
 		}
 		return true;
