@@ -22,7 +22,8 @@ public class Main extends JavaPlugin {
 
 	public void onEnable() {
 		registerCommands();
-		registerEvents(this, new JoinEvent(this), new QuitEvent(this), new ChatEvent(this));
+		registerEvents(this, new JoinEvent(this), new QuitEvent(this),
+				new ChatEvent(this));
 		if (!this.getDataFolder().exists()) {
 			this.getDataFolder().mkdir();
 		}
@@ -45,4 +46,3 @@ public class Main extends JavaPlugin {
 	}
 
 }
-
