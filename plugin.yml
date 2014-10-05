@@ -1,6 +1,6 @@
 name: AdminEssentials
 version: 1.0.0
-main: com.GummyPvP.AdminEssentials.Main
+main: com.GummyPvP.AdminEssentials.Main.Main
 description: Essential admin commands for a Minecraft server
 author: Googlelover1234
 commands:
@@ -9,24 +9,24 @@ commands:
     usage: /<command>
     aliases: [cc, cchat, clearc]
     permission: adminessentials.clearchat
-    permission-message: §cYou may not use this command.
+    permission-message: You may not use this command.
   admin:
     description: Go into admin mode.
     usage: /<command>
     permission: adminessentials.admin
-    permission-message: §cYou may not use this command.
+    permission-message: You may not use this command.
   mutechat:
     description: Mute the entire server, excluding players with a bypass permission.
     usage: /<command>
     aliases: [mc, mchat, mutec]
     permission: adminessentials.mutechat
-    permission-message: §cYou may not use this command.
+    permission-message: You may not use this command.
   adminessentials:
     description: Main command for AdminEssentials.
     usage: /<command> [reload]
     aliases: aess
     permission: adminessentials.reload
-    permission-message: §cYou may not use this command.
+    permission-message: You may not use this command.
 permissions:
   adminessentials.*:
     description: Gives access to ALL AdminEssentials commands.
