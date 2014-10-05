@@ -1,0 +1,57 @@
+name: AdminEssentials
+version: 1.0.0
+main: com.GummyPvP.AdminEssentials.Main
+description: Essential admin commands for a Minecraft server
+author: Googlelover1234
+commands:
+  clearchat:
+    description: Clear the text in the chat box.
+    usage: /<command>
+    aliases: [cc, cchat, clearc]
+    permission: adminessentials.clearchat
+    permission-message: §cYou may not use this command.
+  admin:
+    description: Go into admin mode.
+    usage: /<command>
+    permission: adminessentials.admin
+    permission-message: §cYou may not use this command.
+  mutechat:
+    description: Mute the entire server, excluding players with a bypass permission.
+    usage: /<command>
+    aliases: [mc, mchat, mutec]
+    permission: adminessentials.mutechat
+    permission-message: §cYou may not use this command.
+  adminessentials:
+    description: Main command for AdminEssentials.
+    usage: /<command> [reload]
+    aliases: aess
+    permission: adminessentials.reload
+    permission-message: §cYou may not use this command.
+permissions:
+  adminessentials.*:
+    description: Gives access to ALL AdminEssentials commands.
+    default: op
+    children:
+      adminessentials.clearchat: true
+      adminessentials.mutechat: true
+      adminessentials.reload: true
+      adminessentials.admin: true
+      adminessentials.seeadmins: true
+  adminessentials.admin:
+    description: Lets you go into admin mode.
+    default: op
+  adminessentials.reload:
+    description: Lets you reload the config.
+    default: op
+  adminessentials.clearchat:
+    description: Lets you clear the chat.
+    default: op
+  adminessentials.mutechat:
+    description: Lets you mute the chat.
+    default: op
+  adminessentials.seeadmins:
+    description: Lets you see people in admin mode.
+    default: op
+  adminessentials.mutechat.bypass:
+    description: Lets you talk when chat is muted.
+    default: op
