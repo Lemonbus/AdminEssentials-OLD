@@ -36,7 +36,7 @@ public class Freeze implements CommandExecutor {
 						plugin.getConfig().getString("Settings.prefix"))
 						+ ChatColor.RED
 						+ "Player "
-						+ p.getName()
+						+ args[0]
 						+ " is not online!");
 				return true;
 			}
