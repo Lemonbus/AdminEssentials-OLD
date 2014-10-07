@@ -33,15 +33,16 @@ public class Admin implements CommandExecutor {
 			}
 			if (!plugin.admin.contains(p)) {
 				plugin.admin.add(p);
-				p.sendMessage(ChatColor.LIGHT_PURPLE
-						+ "You are now in ADMIN mode");
+				p.sendMessage(ChatColor.translateAlternateColorCodes('&',
+						plugin.getConfig().getString("Settings.admin-enable")));
 				p.setGameMode(GameMode.CREATIVE);
 				for (Player online : Bukkit.getOnlinePlayers()) {
 					online.showPlayer(p);
 				}
 			} else {
 				plugin.admin.remove(p);
-				p.sendMessage(ChatColor.GREEN + "You are now in PLAY mode");
+				p.sendMessage(ChatColor.translateAlternateColorCodes('&',
+						plugin.getConfig().getString("Settings.admin-disable")));
 				p.setGameMode(GameMode.SURVIVAL);
 				for (Player online : Bukkit.getOnlinePlayers()) {
 					online.hidePlayer(p);
