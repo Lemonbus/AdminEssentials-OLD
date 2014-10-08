@@ -21,6 +21,8 @@ import com.GummyPvP.AdminEssentials.Listeners.QuitEvent;
 
 public class Main extends JavaPlugin {
 
+	protected UpdateChecker updateChecker;
+
 	public ArrayList<Player> admin = new ArrayList<Player>();
 	public boolean Muted;
 	public ArrayList<Player> frozen = new ArrayList<Player>();
@@ -44,6 +46,27 @@ public class Main extends JavaPlugin {
 		if (!this.getConfig().contains("Settings.admin-disable")) {
 			this.getConfig().set("Settings.admin-disable",
 					"&aYou are now in PLAY mode");
+		}
+
+		if (!this.getConfig().contains("Settings.update-notice")) {
+			this.getConfig().set("Settings.update-notice", true);
+		}
+
+		if (!this.getConfig().contains("Settings.admin-prefix-enabled")) {
+			this.getConfig().set("admin-prefix-enabled", false);
+		}
+
+		if (!this.getConfig().contains("Settings.admin-prefix")) {
+			this.getConfig().set("admin-prefix", "&6[&bAM&6] ");
+		}
+
+		this.updateChecker = new UpdateChecker(this,
+				"http://dev.bukkit.org/bukkit-plugins/adminessentials/files.rss");
+		if (this.updateChecker.updateNeeded()) {
+			this.getLogger().warning(
+					"[AdminEssentials] Version " + updateChecker.getVersion()
+							+ " has been released! Download it here: "
+							+ updateChecker.getLink());
 		}
 
 	}
