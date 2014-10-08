@@ -19,6 +19,24 @@ public class ChatEvent implements Listener {
 	@EventHandler
 	public void onChat(AsyncPlayerChatEvent e) {
 		Player p = e.getPlayer();
+
+		if (plugin.getConfig()
+				.getBoolean("Settings.admin-prefix-enabled")) {
+			if (plugin.admin.contains(p)) {
+				String s = e.getMessage();
+				e.setCancelled(true);
+				for (Player online : e.getRecipients()) {
+					online.sendMessage(ChatColor.translateAlternateColorCodes(
+							'&',
+							plugin.getConfig().getString(
+									"Settings.admin-prefix"))
+							+ ChatColor.RESET + p.getDisplayName() + ": " + s);
+				}
+			} else
+				return;
+		} else
+			return;
+
 		if (plugin.Muted) {
 			p.sendMessage(ChatColor.translateAlternateColorCodes('&', plugin
 					.getConfig().getString("Settings.prefix")
