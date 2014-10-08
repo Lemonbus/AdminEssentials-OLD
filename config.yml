@@ -14,3 +14,6 @@ Settings:
   admin-enable: '&dYou are now in ADMIN mode'
   # Admin-Disable is when they get out of /admin mode. Prefix is not included here. #
   admin-disable: '&aYou are now in PLAY mode'
+  update-notice: true
+  admin-prefix-enabled: false
+  admin-prefix: '&6[&bAM&6] '
