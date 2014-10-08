@@ -38,6 +38,11 @@ public class AdminEssentials implements CommandExecutor {
 						+ "/adminessentials - Shows this help menu.");
 				p.sendMessage(ChatColor.BLUE
 						+ "/adminessentials reload - Reloads the configuration file.");
+				p.sendMessage(ChatColor.BLUE
+						+ "/freeze - Freezes a player in their current position.");
+				p.sendMessage(ChatColor.BLUE
+						+ "/unfreeze - UnFreezes a player if frozen.");
+
 				return true;
 			} else if (args.length == 1) {
 				if (args[0].equalsIgnoreCase("reload")) {
