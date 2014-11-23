@@ -10,7 +10,7 @@ import org.bukkit.entity.Player;
 
 import com.GummyPvP.AdminEssentials.Main.Main;
 
-public class Admin implements CommandExecutor {
+public class Admin implements CommandExecutor { 
 
 	private Main plugin;
 
@@ -37,7 +37,10 @@ public class Admin implements CommandExecutor {
 						plugin.getConfig().getString("Settings.admin-enable")));
 				p.setGameMode(GameMode.CREATIVE);
 				for (Player online : Bukkit.getOnlinePlayers()) {
-					online.showPlayer(p);
+					if (online.hasPermission("adminessentials.seeadmins")) {
+						online.showPlayer(p);
+					} else
+						online.hidePlayer(p);
 				}
 			} else {
 				plugin.admin.remove(p);
@@ -45,7 +48,7 @@ public class Admin implements CommandExecutor {
 						plugin.getConfig().getString("Settings.admin-disable")));
 				p.setGameMode(GameMode.SURVIVAL);
 				for (Player online : Bukkit.getOnlinePlayers()) {
-					online.hidePlayer(p);
+					online.showPlayer(p);
 				}
 			}
 		}
