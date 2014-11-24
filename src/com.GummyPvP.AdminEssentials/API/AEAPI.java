@@ -10,7 +10,7 @@ import com.GummyPvP.AdminEssentials.Main.Main;
  * 
  * @since 1.0.4
  * @author fmcgraw
- * @version 1.0.0
+ * @version 1.0.1
  * 
  */
 public class AEAPI {
@@ -38,9 +38,7 @@ public class AEAPI {
 	 *         returns false if they are not
 	 */
 	public static boolean isInAdmin(Player player) {
-		if (plugin.admin.contains(player))
-			return true;
-		return false;
+		return (plugin.admin.contains(player));
 
 	}
 
@@ -51,9 +49,7 @@ public class AEAPI {
 	 *         not muted
 	 */
 	public static boolean isChatMuted() {
-		if (plugin.Muted)
-			return true;
-		return false;
+		return plugin.Muted;
 	}
 
 	/**
@@ -80,10 +76,7 @@ public class AEAPI {
 	public static boolean isPlayerFrozen(Player player) {
 		if (!(player instanceof Player))
 			throw new IllegalArgumentException("Player does not exist!");
-		if (plugin.frozen.contains(player))
-			return true;
-		else
-			return false;
+		return (plugin.frozen.contains(player));
 	}
 
 	/**
@@ -100,10 +93,9 @@ public class AEAPI {
 	public static void setAdminMode(Player player, boolean paramBoolean) {
 		if (!(player instanceof Player))
 			throw new IllegalArgumentException("Player does not exist!");
-		if (paramBoolean)
-			plugin.admin.add(player);
-		if (!paramBoolean)
-			plugin.admin.remove(player);
+		if (paramBoolean) {
+			// Set Admin
+		}
 
 	}
 }
