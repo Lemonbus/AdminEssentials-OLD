@@ -1,5 +1,5 @@
 name: AdminEssentials
-version: 1.0.3
+version: 1.0.5
 main: com.GummyPvP.AdminEssentials.Main.Main
 description: Essential admin commands for a Minecraft server
 author: Googlelover1234
@@ -28,7 +28,7 @@ commands:
     usage: /<command> [player]
     permission: adminessentials.freeze
   unfreeze:
-    description: Unfreeze players, if they are already frozen..
+    description: Unfreeze players, if they are already frozen.
     usage: /<command> [player]
     permission: adminessentials.freeze
 permissions:
@@ -41,6 +41,8 @@ permissions:
       adminessentials.reload: true
       adminessentials.admin: true
       adminessentials.seeadmins: true
+      adminessentials.mutechat.bypass: true
+      adminessentials.freeze: true
   adminessentials.admin:
     description: Lets you go into admin mode.
     default: op
@@ -60,5 +62,5 @@ permissions:
     description: Lets you talk when chat is muted.
     default: op
   adminessentials.freeze:
-    description: Let's you use the freeze and unfreeze command.
+    description: Lets you use the freeze and unfreeze command.
     default: op
