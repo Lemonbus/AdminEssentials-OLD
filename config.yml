@@ -17,3 +17,5 @@ Settings:
   update-notice: true
   admin-prefix-enabled: false
   admin-prefix: '&6[&bAM&6] '
+  fakejoin-msg: '&e%PLAYER% joined the game.'
+  fakeleave-msg: '&e%PLAYER% left the game.'
