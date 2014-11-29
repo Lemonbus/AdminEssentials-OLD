@@ -1,5 +1,5 @@
 name: AdminEssentials
-version: 1.0.5
+version: 1.0.6
 main: com.GummyPvP.AdminEssentials.Main.Main
 description: Essential admin commands for a Minecraft server
 author: Googlelover1234
@@ -31,6 +31,19 @@ commands:
     description: Unfreeze players, if they are already frozen.
     usage: /<command> [player]
     permission: adminessentials.freeze
+  playerclearchat:
+    description: Clear your own chat.
+    usage: /<command>
+    aliases: [pcc, playercc, pclearchat, pclearc, pcchat, playerclearc, playercchat]
+    permission: adminessentials.playerclearchat
+  fakejoin:
+    description: Send a fake join message of yourself, or a name of your choosing.
+    usage: /<command> (username)
+    permission: adminessentials.fakejoin
+  fakeleave:
+    description: Send a fake leave message of yourself, or a name of your choosing.
+    usage: /<command> (username)
+    permission: adminessentials.fakeleave
 permissions:
   adminessentials.*:
     description: Gives access to ALL AdminEssentials commands.
@@ -43,6 +56,9 @@ permissions:
       adminessentials.seeadmins: true
       adminessentials.mutechat.bypass: true
       adminessentials.freeze: true
+      adminessentials.playerclearchat: true
+      adminessentials.fakejoin: true
+      adminessentials.fakeleave: true
   adminessentials.admin:
     description: Lets you go into admin mode.
     default: op
@@ -63,4 +79,11 @@ permissions:
     default: op
   adminessentials.freeze:
     description: Lets you use the freeze and unfreeze command.
+    default: op
+  adminessentials.playerclearchat:
+    description: Let's you clear your own chat.
+    default: op
+  adminessentials.fakejoin:
+    default: op
+  adminessentials.fakeleave:
     default: op
