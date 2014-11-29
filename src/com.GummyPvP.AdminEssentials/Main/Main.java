@@ -11,8 +11,11 @@ import org.bukkit.plugin.java.JavaPlugin;
 import com.GummyPvP.AdminEssentials.Commands.Admin;
 import com.GummyPvP.AdminEssentials.Commands.AdminEssentials;
 import com.GummyPvP.AdminEssentials.Commands.ClearChat;
+import com.GummyPvP.AdminEssentials.Commands.FakeJoin;
+import com.GummyPvP.AdminEssentials.Commands.FakeLeave;
 import com.GummyPvP.AdminEssentials.Commands.Freeze;
 import com.GummyPvP.AdminEssentials.Commands.MuteChat;
+import com.GummyPvP.AdminEssentials.Commands.PlayerClearChat;
 import com.GummyPvP.AdminEssentials.Commands.UnFreeze;
 import com.GummyPvP.AdminEssentials.Listeners.ChatEvent;
 import com.GummyPvP.AdminEssentials.Listeners.JoinEvent;
@@ -32,6 +35,7 @@ public class Main extends JavaPlugin {
 		registerCommands();
 		registerEvents(this, new JoinEvent(this), new QuitEvent(this),
 				new ChatEvent(this), new MoveEvent(this));
+
 		if (!this.getDataFolder().exists()) {
 			this.getDataFolder().mkdir();
 		}
@@ -53,11 +57,21 @@ public class Main extends JavaPlugin {
 		}
 
 		if (!this.getConfig().contains("Settings.admin-prefix-enabled")) {
-			this.getConfig().set("admin-prefix-enabled", false);
+			this.getConfig().set("Settings.admin-prefix-enabled", false);
 		}
 
 		if (!this.getConfig().contains("Settings.admin-prefix")) {
-			this.getConfig().set("admin-prefix", "&6[&bAM&6] ");
+			this.getConfig().set("Settings.admin-prefix", "&6[&bAM&6] ");
+		}
+
+		if (!this.getConfig().contains("Settings.fakejoin-msg")) {
+			this.getConfig().set("Settings.fakejoin-msg",
+					"&e%PLAYER% joined the game. ");
+		}
+
+		if (!this.getConfig().contains("Settings.fakeleave-msg")) {
+			this.getConfig().set("Settings.fakeleave-msg",
+					"&e%PLAYER% left the game. ");
 		}
 
 		this.updateChecker = new UpdateChecker(this,
@@ -68,7 +82,6 @@ public class Main extends JavaPlugin {
 							+ " has been released! Download it here: "
 							+ updateChecker.getLink());
 		}
-
 	}
 
 	public void registerEvents(org.bukkit.plugin.Plugin plugin, Listener... lis) {
@@ -95,6 +108,15 @@ public class Main extends JavaPlugin {
 				ChatColor.RED + "You may not use this command.");
 		getCommand("UnFreeze").setExecutor(new UnFreeze(this));
 		getCommand("UnFreeze").setPermissionMessage(
+				ChatColor.RED + "You may not use this command.");
+		getCommand("PlayerClearChat").setExecutor(new PlayerClearChat(this));
+		getCommand("PlayerClearChat").setPermissionMessage(
+				ChatColor.RED + "You may not use this command.");
+		getCommand("FakeJoin").setExecutor(new FakeJoin(this));
+		getCommand("FakeJoin").setPermissionMessage(
+				ChatColor.RED + "You may not use this command.");
+		getCommand("FakeLeave").setExecutor(new FakeLeave(this));
+		getCommand("FakeLeave").setPermissionMessage(
 				ChatColor.RED + "You may not use this command.");
 	}
 }
