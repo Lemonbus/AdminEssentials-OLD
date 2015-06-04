@@ -1,21 +1,12 @@
-# Thanks for using my plugin! #
-# The prefix will always be before the message, so you don't need to put the prefix before every message! #
-# ChatColors are supported, for more information, go to http://ess.khhq.net/mc/ for all of the colors #
-# Finally, if the %PLAYER% is the console, the name will be "CONSOLE" #
-# Once again, thanks! #
-# Googlelover1234 - Author #
+# Thanks for using my plugin. In this file, you can configure several settings (Generally, when you are editing one of the messages, colorcodes [the & sign] will work) #
 Settings:
-  prefix: '&6[&bAdminEssentials&6] '
-  clearchat-message: '&aChat has been cleared by %PLAYER%!'
-  mutechat-message: '&cChat has been muted by %PLAYER%!'
-  unmutechat-message: '&aChat has been unmuted by %PLAYER%!'
-  chat-is-muted: '&cChat is currently muted!'
-  # Admin-Enable is when they go into /admin mode. Prefix is not included here. #
-  admin-enable: '&dYou are now in ADMIN mode'
-  # Admin-Disable is when they get out of /admin mode. Prefix is not included here. #
-  admin-disable: '&aYou are now in PLAY mode'
-  update-notice: true
-  admin-prefix-enabled: false
-  admin-prefix: '&6[&bAM&6] '
-  fakejoin-msg: '&e%PLAYER% joined the game.'
-  fakeleave-msg: '&e%PLAYER% left the game.'
+  prefix: '&6[&bAdminEssentials&6] ' # The prefix that comes before most messages below V *NOTE* You want to make the prefix end with a space, so it looks nice #
+  adminAddMessage: '&dYou are now in ADMIN mode' # This is the message that is sent to admins when they use /admin and get put into admin mode #
+  adminRemoveMessage: '&aYou are now in PLAY mode' # Opposite of the above ^ #
+  clearchat-message: '&bChat has been cleared by &a%PLAYER%' # In this case, the prefix defined above will be placed before the message. %PLAYER% is the sender's name. #
+  your-chat-has-been-cleared: '&bYour chat has been cleared by &a%PLAYER%' # This is the message that is sent to players when they use /pcc - prefix is included in this message #
+  mutechat-message: '&bChat has been &cmuted&b by &a%PLAYER%' # This is the message that is broadcasted when you mute the chat #
+  unMutechat-message: '&bChat has been &aunmuted&b by &a%PLAYER%' # This is the message that is broadcasted when you unmute the chat #
+  chat-is-muted: '&cSorry, chat is currently muted!' # The message that is sent to players when they cannot chat because chat is muted #
+  adminOnDutyPrefixEnabled: false # This will enable the thing below V *NOTE* This is still being worked on, please only use it if you really want it #
+  adminOnDutyPrefix: '&9[&4On Duty&9]&c ' # If the player is in admin mode, and they type a message into chat, what should the prefix be? #

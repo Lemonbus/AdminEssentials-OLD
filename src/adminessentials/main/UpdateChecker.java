@@ -1,4 +1,4 @@
-package com.GummyPvP.AdminEssentials.Main;
+package adminessentials.main;
 
 import java.io.InputStream;
 import java.net.MalformedURLException;

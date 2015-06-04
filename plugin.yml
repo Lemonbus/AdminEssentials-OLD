@@ -1,89 +1,66 @@
 name: AdminEssentials
-version: 1.0.6
-main: com.GummyPvP.AdminEssentials.Main.Main
-description: Essential admin commands for a Minecraft server
-author: Googlelover1234
+version: 1.1.2
+author: Jeremy Gooch (Googlelover1234)
+main: adminessentials.main.Main
+description: AdminEssentials is a lightweight plugin that has one goal - provide server administrators with helpful commands for advanced moderation
 commands:
-  clearchat:
-    description: Clear the text in the chat box.
-    usage: /<command>
-    aliases: [cc, cchat, clearc]
-    permission: adminessentials.clearchat
   admin:
-    description: Go into admin mode.
-    usage: /<command>
+    description: Staff Command.
     permission: adminessentials.admin
+  clearchat:
+    description: Staff Command.
+    permission: adminessentials.clearchat
+    aliases: [cc, cchat, clearc]
   mutechat:
-    description: Mute the entire server, excluding players with a bypass permission.
-    usage: /<command>
-    aliases: [mc, mchat, mutec]
+    description: Staff Command.
     permission: adminessentials.mutechat
-  adminessentials:
-    description: Main command for AdminEssentials.
-    usage: /<command> [reload]
-    aliases: aess
-    permission: adminessentials.reload
-  freeze:
-    description: Freeze players in their current position.
-    usage: /<command> [player]
-    permission: adminessentials.freeze
-  unfreeze:
-    description: Unfreeze players, if they are already frozen.
-    usage: /<command> [player]
-    permission: adminessentials.freeze
+    aliases: [mc, mutec, mchat]
   playerclearchat:
-    description: Clear your own chat.
-    usage: /<command>
-    aliases: [pcc, playercc, pclearchat, pclearc, pcchat, playerclearc, playercchat]
+    description: Staff Command.
     permission: adminessentials.playerclearchat
-  fakejoin:
-    description: Send a fake join message of yourself, or a name of your choosing.
-    usage: /<command> (username)
-    permission: adminessentials.fakejoin
-  fakeleave:
-    description: Send a fake leave message of yourself, or a name of your choosing.
-    usage: /<command> (username)
-    permission: adminessentials.fakeleave
+    aliases: [pcc, playercc, pclearchat]
+  adminessentials:
+    description: Staff Command.
+    permission: adminessentials.reload
+    aliases: [aess]
+
 permissions:
   adminessentials.*:
-    description: Gives access to ALL AdminEssentials commands.
-    default: op
+    description: Gives all command permissions to AdminEssentials.
     children:
-      adminessentials.clearchat: true
-      adminessentials.mutechat: true
-      adminessentials.reload: true
       adminessentials.admin: true
-      adminessentials.seeadmins: true
+      adminessentials.clearchat: true
+      adminessentials.update: true
+      adminessentials.mutechat: true
       adminessentials.mutechat.bypass: true
-      adminessentials.freeze: true
+      adminessentials.seeadmins: true
       adminessentials.playerclearchat: true
-      adminessentials.fakejoin: true
-      adminessentials.fakeleave: true
+      adminessentials.help: true
+      adminessentials.reload: true
   adminessentials.admin:
-    description: Lets you go into admin mode.
-    default: op
-  adminessentials.reload:
-    description: Lets you reload the config.
+    description: Staff Permission.
     default: op
   adminessentials.clearchat:
-    description: Lets you clear the chat.
+    description: Staff Permission.
     default: op
+  adminessentials.update:
+    description: Lets you see a chat message when there is currently an update.
+    default: false
   adminessentials.mutechat:
-    description: Lets you mute the chat.
-    default: op
-  adminessentials.seeadmins:
-    description: Lets you see people in admin mode.
+    description: Staff Permission.
     default: op
   adminessentials.mutechat.bypass:
-    description: Lets you talk when chat is muted.
+    description: Staff Permission.
     default: op
-  adminessentials.freeze:
-    description: Lets you use the freeze and unfreeze command.
+  adminessentials.seeadmins:
+    description: Staff Permission.
     default: op
   adminessentials.playerclearchat:
-    description: Let's you clear your own chat.
+    description: Staff Permission.
     default: op
-  adminessentials.fakejoin:
+  adminessentials.help:
+    description: Staff Permission.
     default: op
-  adminessentials.fakeleave:
+  adminessentials.reload:
+    description: Staff Permission.
     default: op
