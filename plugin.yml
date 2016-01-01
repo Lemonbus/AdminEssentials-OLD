@@ -1,5 +1,5 @@
 name: AdminEssentials
-version: 1.1.2
+version: 1.1.3
 author: Jeremy Gooch (Googlelover1234)
 main: adminessentials.main.Main
 description: AdminEssentials is a lightweight plugin that has one goal - provide server administrators with helpful commands for advanced moderation
@@ -23,6 +23,25 @@ commands:
     description: Staff Command.
     permission: adminessentials.reload
     aliases: [aess]
+  freeze:
+    description: Staff Command.
+    permission: adminessentials.freeze
+  unfreeze:
+    description: Staff Command.
+    permission: adminessentials.unfreeze
+    aliases: [thaw]
+  fakejoin:
+    description: Staff Command.
+    permission: adminessentials.fakejoin
+    aliases: [fj]
+  fakeleave:
+    description: Staff Command.
+    permission: adminessentials.fakeleave
+    aliases: [fl]
+  slowchat:
+    description: Staff Command.
+    permission: adminessentials.slowchat
+    aliases: [slow]
 
 permissions:
   adminessentials.*:
@@ -37,6 +56,12 @@ permissions:
       adminessentials.playerclearchat: true
       adminessentials.help: true
       adminessentials.reload: true
+      adminessentials.freeze: true
+      adminessentials.unfreeze: true
+      adminessentials.fakejoin: true
+      adminessentials.fakeleave: true
+      adminessentials.slowchat: true
+      adminessentials.slowchat.bypass: true
   adminessentials.admin:
     description: Staff Permission.
     default: op
@@ -62,5 +87,23 @@ permissions:
     description: Staff Permission.
     default: op
   adminessentials.reload:
+    description: Staff Permission.
+    default: op
+  adminessentials.freeze:
+    description: Staff Permission.
+    default: op
+  adminessentials.unfreeze:
+    description: Staff Permission.
+    default: op
+  adminessentials.fakejoin:
+    description: Staff Permission.
+    default: op
+  adminessentials.fakeleave:
+    description: Staff Permission.
+    default: op
+  adminessentials.slowchat:
+    description: Staff Permission.
+    default: op
+  adminessentials.slowchat.bypass:
     description: Staff Permission.
     default: op

@@ -20,8 +20,10 @@ public class ChatManager {
 	}
 
 	public void messageNoPermission(CommandSender sender) {
-		sender.sendMessage(ChatColor.RED
-				+ "I'm sorry, but you do not have permission to perform this command."
-				+ " Please contact the server administrators if you believe that this is in error.");
+		sender.sendMessage(ChatColor.translateAlternateColorCodes(
+				'&',
+				ConfigManager.getInstance().getConfig()
+						.getString("no-permission-message")
+						.replaceAll("%PLAYER%", sender.getName())));
 	}
 }

@@ -24,6 +24,8 @@ public class AdminManager {
 
 	public void setAdminMode(Player p, boolean b) {
 		if (b) {
+			if (isInAdminMode(p))
+				return; // Already in admin mode, don't need to add them again.
 			adminMode.add(p);
 		} else
 			adminMode.remove(p);

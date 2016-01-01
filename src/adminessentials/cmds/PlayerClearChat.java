@@ -29,15 +29,18 @@ public class PlayerClearChat implements CommandExecutor {
 						p.sendMessage(" ");
 					}
 
-					p.sendMessage(ChatColor.translateAlternateColorCodes(
-							'&',
-							ConfigManager.getInstance().getConfig()
-									.getString("Settings.prefix"))
-							+ ConfigManager
-									.getInstance()
-									.getConfig()
-									.getString(
-											"Settings.your-chat-has-been-cleared"));
+					p.sendMessage(ChatColor
+							.translateAlternateColorCodes(
+									'&',
+									ConfigManager.getInstance().getConfig()
+											.getString("Settings.prefix")
+											+ ConfigManager
+													.getInstance()
+													.getConfig()
+													.getString(
+															"Settings.your-chat-has-been-cleared")
+													.replaceAll("%PLAYER%",
+															p.getName())));
 					return true;
 				}
 
@@ -55,14 +58,18 @@ public class PlayerClearChat implements CommandExecutor {
 						target.sendMessage(" ");
 					}
 
-					target.sendMessage(ChatColor.translateAlternateColorCodes(
-							'&', ConfigManager.getInstance().getConfig()
-									.getString("Settings.prefix"))
-							+ ConfigManager
-									.getInstance()
-									.getConfig()
-									.getString(
-											"Settings.your-chat-has-been-cleared"));
+					target.sendMessage(ChatColor
+							.translateAlternateColorCodes(
+									'&',
+									ConfigManager.getInstance().getConfig()
+											.getString("Settings.prefix")
+											+ ConfigManager
+													.getInstance()
+													.getConfig()
+													.getString(
+															"Settings.your-chat-has-been-cleared")
+													.replaceAll("%PLAYER%",
+															p.getName())));
 				}
 
 				if (args.length > 1) {

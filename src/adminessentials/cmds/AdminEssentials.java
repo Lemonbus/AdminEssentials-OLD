@@ -11,15 +11,16 @@ import adminessentials.utils.ConfigManager;
 public class AdminEssentials implements CommandExecutor {
 
 	private String[] MESSAGE = new String[] {
-			ChatColor.BLUE + "/admin - Goes into admin mode.",
-			ChatColor.BLUE + "/clearchat - Clears the text in the chat box.",
-			ChatColor.BLUE
-					+ "/mutechat - Mutes the entire server, excluding players with a bypass permission.",
-			ChatColor.BLUE + "/adminessentials - Shows this help menu.",
-			ChatColor.BLUE
-					+ "/adminessentials reload - Reloads the configuration file.",
-			ChatColor.BLUE
-					+ "/pcc - Clears your chat, or a specified player's chat." };
+			ChatColor.translateAlternateColorCodes('&', "&b/admin &8- &2Goes into admin mode."),
+			ChatColor.translateAlternateColorCodes('&', "&b/clearchat &8- &2Clears the text in the chat box."),
+			ChatColor.translateAlternateColorCodes('&', "&b/mutechat &b8- &2Mutes the entire server, excluding players with a bypass permission."),
+			ChatColor.translateAlternateColorCodes('&', "&b/adminessentials &8- &2Shows this help menu."),
+			ChatColor.translateAlternateColorCodes('&', "&b/adminessentials reload &8- &2Reloads the configuration file."),
+			ChatColor.translateAlternateColorCodes('&', "&b/pcc &8- &2Clears your chat, or a specified player's chat."), 
+			ChatColor.translateAlternateColorCodes('&', "&b/freeze &8- &2Freezes a player in their current position."),
+			ChatColor.translateAlternateColorCodes('&', "&b/thaw &8- &2Thaws a player, so that they can freely move."),
+			ChatColor.translateAlternateColorCodes('&', "&b/fakejoin &8- &2Broadcasts a fakejoin message."),
+			ChatColor.translateAlternateColorCodes('&', "&b/fakeleave &8- &2Broadcasts a fakeleave message.") };
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String arg2,

@@ -7,6 +7,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
 import adminessentials.utils.AdminManager;
+import adminessentials.utils.FreezeManager;
 import adminessentials.utils.Manager;
 
 public class AdminAPI {
@@ -124,6 +125,36 @@ public class AdminAPI {
 		Player p = Bukkit.getPlayer(s);
 		if (p != null)
 			AdminManager.getInstance().setAdminMode(p, b);
+		else
+			Bukkit.getLogger().warning("Player " + s + " is null!");
+	}
+
+	/**
+	 * Freezes/Thaws a player.
+	 * 
+	 * @param p
+	 *            Player to freeze/thaw,
+	 * @param b
+	 *            Freezes player if true, thaws them if false
+	 *
+	 */
+	public static void setFrozen(Player p, boolean b) {
+		FreezeManager.getInstance().setFrozen(p, b);
+	}
+
+	/**
+	 * Freezes/Thaws a player by their name.
+	 * 
+	 * @param p
+	 *            Player's name to freeze/thaw,
+	 * @param b
+	 *            Freezes player if true, thaws them if false
+	 *
+	 */
+	public static void setFrozen(String s, boolean b) {
+		Player p = Bukkit.getPlayer(s);
+		if (p != null)
+			FreezeManager.getInstance().setFrozen(p, b);
 		else
 			Bukkit.getLogger().warning("Player " + s + " is null!");
 	}

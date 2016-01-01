@@ -10,3 +10,9 @@ Settings:
   chat-is-muted: '&cSorry, chat is currently muted!' # The message that is sent to players when they cannot chat because chat is muted #
   adminOnDutyPrefixEnabled: false # This will enable the thing below V *NOTE* This is still being worked on, please only use it if you really want it #
   adminOnDutyPrefix: '&9[&4On Duty&9]&c ' # If the player is in admin mode, and they type a message into chat, what should the prefix be? #
+  no-permission-message: '&cI am sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is an error.' # Message that is sent to the player if they do not have correct permissions. %PLAYER% can be used here.
+  fake-join-message: '&e%PLAYER% joined the game.'
+  fake-leave-message: '&e%PLAYER% left the game.'
+  slowchat-message: '&bChat has been &cslowed&b by &a%PLAYER%'
+  unSlowchat-message: '&bChat has been set back to normal speed by &a%PLAYER%'
+  chat-is-slowed: '&cYou can chat again in &c%TIME% seconds'

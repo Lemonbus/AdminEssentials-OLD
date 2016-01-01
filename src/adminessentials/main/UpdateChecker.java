@@ -6,17 +6,18 @@ import java.net.URL;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 
+import org.bukkit.plugin.Plugin;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 public class UpdateChecker {
-	private Main plugin;
+	private Plugin plugin;
 	private URL filesFeed;
 	private String version;
 	private String link;
 
-	public UpdateChecker(Main plugin, String url) {
+	public UpdateChecker(Plugin plugin, String url) {
 		this.plugin = plugin;
 		try {
 			this.filesFeed = new URL(url);

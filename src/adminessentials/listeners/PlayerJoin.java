@@ -6,26 +6,21 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-import adminessentials.main.Main;
 import adminessentials.main.UpdateChecker;
 import adminessentials.utils.AdminManager;
+import adminessentials.utils.ConfigManager;
 
 public class PlayerJoin implements Listener {
 
 	protected UpdateChecker updateChecker;
-
-	private Main main;
-
-	public PlayerJoin(Main main) {
-		this.main = main;
-	}
 
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent e) {
 		Player p = e.getPlayer();
 
 		if (p.isOp() || p.hasPermission("adminessentials.update")) {
-			this.updateChecker = new UpdateChecker(main,
+			this.updateChecker = new UpdateChecker(ConfigManager.getInstance()
+					.getPlugin(),
 					"http://dev.bukkit.org/bukkit-plugins/adminessentials/files.rss");
 
 			if (this.updateChecker.updateNeeded()) {
